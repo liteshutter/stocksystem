@@ -1,0 +1,250 @@
+/*
+SQLyog Trial v13.1.8 (64 bit)
+MySQL - 5.5.8-log : Database - sis_stock
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`sis_stock` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `sis_stock`;
+
+/*Table structure for table `cliente` */
+
+DROP TABLE IF EXISTS `cliente`;
+
+CREATE TABLE `cliente` (
+  `ID_CLI` int(5) NOT NULL AUTO_INCREMENT,
+  `Nome_Cli` varchar(50) DEFAULT NULL,
+  `Contacto_Cli` varchar(15) DEFAULT NULL,
+  `Email_Cli` varchar(30) DEFAULT NULL,
+  `Rua_AV_Cli` varchar(50) DEFAULT NULL,
+  `Locl_Cli` varchar(50) DEFAULT NULL,
+  `Nuit_Cli` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`ID_CLI`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `cliente` */
+
+/*Table structure for table `fornecedor` */
+
+DROP TABLE IF EXISTS `fornecedor`;
+
+CREATE TABLE `fornecedor` (
+  `ID_For` int(5) NOT NULL AUTO_INCREMENT,
+  `Nome_For` varchar(50) DEFAULT NULL,
+  `Contacto_For` varchar(15) DEFAULT NULL,
+  `Telefone_For` varchar(15) DEFAULT NULL,
+  `Email_For` varchar(50) DEFAULT NULL,
+  `Fax_For` varchar(30) DEFAULT NULL,
+  `Nuit_For` varchar(15) DEFAULT NULL,
+  `Rua_AV_For` varchar(50) DEFAULT NULL,
+  `Locl_For` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID_For`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `fornecedor` */
+
+insert  into `fornecedor`(`ID_For`,`Nome_For`,`Contacto_For`,`Telefone_For`,`Email_For`,`Fax_For`,`Nuit_For`,`Rua_AV_For`,`Locl_For`) values 
+(4,'Inicial ','','','',NULL,'','','');
+
+/*Table structure for table `produtos` */
+
+DROP TABLE IF EXISTS `produtos`;
+
+CREATE TABLE `produtos` (
+  `ID_Pro` int(5) NOT NULL AUTO_INCREMENT,
+  `fornecedor` varchar(50) DEFAULT NULL,
+  `num_fa` varchar(50) DEFAULT NULL,
+  `data_c` date DEFAULT NULL,
+  `data_in` date DEFAULT NULL,
+  `artigo` varchar(30) NOT NULL,
+  `descricao` varchar(50) DEFAULT NULL,
+  `un` varchar(5) DEFAULT NULL,
+  `qtd` decimal(12,2) DEFAULT NULL,
+  `familia` varchar(50) DEFAULT NULL,
+  `armazem` varchar(50) DEFAULT NULL,
+  `preco_un` varchar(9) DEFAULT NULL,
+  `iva` varchar(4) DEFAULT NULL,
+  `preco_tl` varchar(9) DEFAULT NULL,
+  PRIMARY KEY (`artigo`),
+  UNIQUE KEY `ID_Pro` (`ID_Pro`)
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
+
+/*Data for the table `produtos` */
+
+insert  into `produtos`(`ID_Pro`,`fornecedor`,`num_fa`,`data_c`,`data_in`,`artigo`,`descricao`,`un`,`qtd`,`familia`,`armazem`,`preco_un`,`iva`,`preco_tl`) values 
+(9,'Inicial ','','2022-01-14','2022-01-14','01','PUXADORES 7-35','',21.00,'PUXADORES ','A1','185.00','','0'),
+(10,'Inicial ','','2022-01-14','2022-01-14','02','PUXADORES URFIC 25','',20.00,'PUXADORES','A1','175.00','','0'),
+(11,'Inicial ','','2022-01-14','2022-01-14','03','PUXADORES RODES 43','',3.00,'PUXADORES','A1','695.00','','0'),
+(12,'Inicial ','','2022-01-14','2022-01-14','04','PUXADORES CER 08','',5.00,'PUXADORES','A1','175.00','','0'),
+(13,'Inicial ','','2022-01-14','2022-01-14','05','PUXADORES MOVEIS DV','',6.00,'PUXADORES','A1','395.00','','0'),
+(14,'Inicial ','','2022-01-14','2022-01-14','06','PUXADORES ALFA 40 ','',24.00,'PUXADORES','A1','390.00','','0'),
+(15,'Inicial ','','2022-01-14','2022-01-14','07','SUPORTES CORRIMAO INOX','',17.00,'SUPORTES','A1','675.00','','0'),
+(16,'Inicial ','','2022-01-14','2022-01-14','08','ADAPTADO N. 3700','',4.00,'ADAPTADOS','A1','795.00','','0'),
+(17,'Inicial ','','2022-01-14','2022-01-14','09','DOBRADICAS VAI VEM 3','',2.00,'DOBRADICAS','A1','1750.00','','0'),
+(18,'Inicial ','','2022-01-14','2022-01-14','10','MOSQUITAO CH3 ','',19.00,'MOSQUITAO','A1','145.00','','0'),
+(109,'','','2022-01-15','2022-01-15','100','PUXADORES  GASTRO ','',8.00,'PUXADORES ','A1','495.00','','0'),
+(110,'','','2022-01-15','2022-01-15','101','OCULOS DE PROTECCAO ','',18.00,'OCULOS ','A1','395.00','','0'),
+(111,'','','2022-01-15','2022-01-15','102','PUXADORES N. 128 ','',2917.00,'PUXADORES ','A1','95.00','','0'),
+(112,'','','2022-01-15','2022-01-15','103','PUXADOR N.1 ','',341.00,'PUXADORES ','A1','145.00','','0'),
+(113,'Inicial ','','2022-01-15','2022-01-15','104','PISTOLA DE GRISS ','',1.00,'PISTOLAS ','A1','9700.00','','0'),
+(114,'Inicial ','','2022-01-15','2022-01-15','105','RECTIFICADORAS ','',2.00,'RECTIFICADORAS ','A1','5900.00','','0'),
+(19,'Inicial ','','2022-01-14','2022-01-14','11','PUXADORES CER 47','',6.00,'PUXADORES','A1','1950.00','','0'),
+(20,'Inicial ','','2022-01-14','2022-01-14','12','PUXADORES ALFA BOA INOX','',3.00,'PUXADORES','A1','225.00','','0'),
+(21,'Inicial ','','2022-01-14','2022-01-14','13','ABRACADEIRAS 22','',55.00,'ABRACADEIRAS','A1','25.00','','0'),
+(22,'Inicial ','','2022-01-14','2022-01-14','14','ABRACADEIRAS 23 ','',10.00,'ABRACADEIRAS','A1','45.00','','0'),
+(23,'Inicial ','','2022-01-14','2022-01-14','15','ABRACADEIRAS 27 ','',11.00,'ABRACADEIRAS','A1','60.00','','0'),
+(24,'Inicial ','','2022-01-14','2022-01-14','16','SUPORTES L25','',7.00,'SUPORTES','A1','50.00','','0'),
+(25,'Inicial ','','2022-01-14','2022-01-14','17','SUPORTES L40 ','',9.00,'SUPORTES','A1','70.00','','0'),
+(26,'Inicial ','','2022-01-14','2022-01-14','18','PORTAO JNF 110 ','',19.00,'PORTAO','A1','195.00','','0'),
+(27,'Inicial ','','2022-01-14','2022-01-14','19','SUPORTES CORRIMAO LATAO','',10.00,'SUPORTES','A1','675.00','','0'),
+(28,'Inicial ','','2022-01-14','2022-01-14','20','maquina de polir ','',4.00,'maquina','A1','3950.00','','0'),
+(29,'Inicial ','','2022-01-14','2022-01-14','21','MACACOS HIDRAULICOS','',2.00,'MACACOS','A1','5900.00','','0'),
+(30,'Inicial ','','2022-01-14','2022-01-14','22','MAQUINA PLANA ELETRICA DE WALI','',1.00,'MAQUINAS','A1','19500.00','','0'),
+(31,'Inicial ','','2022-01-14','2022-01-14','23','TICO TICO BLACK & DECKER','',1.00,'TICO TICO','A1 ','4950.00','','0'),
+(32,'Inicial ','','2022-01-14','2022-01-14','24','LIXADEIRA ELETRICA BLACK&DECKE','',4.00,'LIXADEIRAS','A1','3900.00','','0'),
+(33,'Inicial ','','2022-01-14','2022-01-14','25','MACACO DE ENFGATE 6TON','',2.00,'MACACOS','A1','7800.00','','0'),
+(34,'Inicial ','','2022-01-14','2022-01-14','26','BERBEQUIM ORIENT WEALTH 1010w','',5.00,'BERBEQUIM','A1','4900.00','','0'),
+(35,'Inicial ','','2022-01-14','2022-01-14','27','tico tico dewalt ','',1.00,'tico tico ','A1','15500.00','','0'),
+(36,'Inicial ','','2022-01-14','2022-01-14','28','BERBEQUIM DEWALT DWD 1125','',2.00,'BERBEQUIM','A1','11900.00','','0'),
+(37,'Inicial ','','2022-01-14','2022-01-14','29','LIXADEIRAS DEWALT D26441','',2.00,'LIXADEIRAS','A1','12900.00','','0'),
+(38,'Inicial ','','2022-01-14','2022-01-14','30','REBARBADEIRA BOSCH 230-2600W','',1.00,'REBARBADEIRAS','A1','18700.00','','0'),
+(39,'Inicial ','','2022-01-14','2022-01-14','31','REBARBADEIRA BOSCH 115-900W','',1.00,'REBARBADEIRAS','A1','9900.00','','0'),
+(40,'Inicial ','','2022-01-14','2022-01-14','32','RECTIFICADORA BOSCH 66528','',2.00,'RECTIFICADORAS','A1','18900.00','','0'),
+(41,'Inicial ','','2022-01-15','2022-01-15','33','PUXADORES P MOVEIS N.79','',78.00,'PUXADORES','A1','65.00','','0'),
+(42,'Inicial ','','2022-01-15','2022-01-15','34','PUXADORES P MOVEIS N.19','',13.00,'PUXADORES ','A1','75.00','','0'),
+(43,'Inicial ','','2022-01-15','2022-01-15','35','PUXADORES P MOVEIS N.94','',91.00,'PUXADORES','A1','95.00','','0'),
+(44,'Inicial ','','2022-01-15','2022-01-15','36','PUXADORES P MOVEIS N.11','',32.00,'PUXADORES ','A1','195.00','','0'),
+(45,'Inicial ','','2022-01-15','2022-01-15','37','PUXADORES P MOVEIS N.75','',8.00,'PUXADORES','A1','75.00','','0'),
+(46,'Inicial ','','2022-01-15','2022-01-15','38','PUXADORES P MOVEIS N. 58','',45.00,'PUXADORES ','A1','165.00','','0'),
+(47,'Inicial ','','2022-01-15','2022-01-15','39','PUXADORES P MOVEIS N. 59','',24.00,'PUXADORES ','A1 ','220.00','','0'),
+(48,'Inicial ','','2022-01-15','2022-01-15','40','PUXADORES P MOVEIS N.16','',40.00,'PUXADORES ','A1','110.00','','0'),
+(49,'Inicial ','','2022-01-15','2022-01-15','41','PUXADORES P MOVEIS N. 21','',31.00,'PUXADORES ','A1','145.00','','0'),
+(50,'Inicial ','','2022-01-15','2022-01-15','42','PUXADORES P MOVEIS N. 25','',36.00,'PUXADORES ','A1','120.00','','0'),
+(51,'Inicial ','','2022-01-15','2022-01-15','43','PUXADORES P MOVEIS N. 62','',20.00,'PUXADORES ','A1','120.00','','0'),
+(52,'Inicial ','','2022-01-15','2022-01-15','44','PUXADORES P MOVEIS N. 15','',30.00,'PUXADORES ','A1 ','195.00','','0'),
+(53,'Inicial ','','2022-01-15','2022-01-15','45','PUXADORES P MOVEIS N. 64','',47.00,'PUXADORES ','A1','145.00','','0'),
+(54,'Inicial ','','2022-01-15','2022-01-15','46','PUXADORES P MOVEIS N. 30','',68.00,'PUXADORES ','A1','175.00','','0'),
+(55,'Inicial ','','2022-01-15','2022-01-15','47','PUXADORES P MOVEIS N. 23','',10.00,'PUXADORES ','A1','85.00','','0'),
+(56,'Inicial ','','2022-01-15','2022-01-15','48','PUXADORES P MOVEIS N. 47','',10.00,'PUXADORES ','A1','1950.00','','0'),
+(57,'Inicial ','','2022-01-15','2022-01-15','49','PUXADORES P MOVEIS N. 101','',50.00,'PUXADORES ','A1','145.00','','0'),
+(58,'Inicial ','','2022-01-15','2022-01-15','50','PUXADORES P MOVEIS N. 102','',60.00,'PUXADORES ','A1','195.00','','0'),
+(59,'Inicial ','','2022-01-15','2022-01-15','51','PUXADORES P MOVEIS N. 57','',143.00,'PUXADORES ','A1','75.00','','0'),
+(60,'Inicial ','','2022-01-15','2022-01-15','52','PUXADORES P MOVEIS N. 18','',30.00,'PUXADORES ','A1','145.00','','0'),
+(61,'Inicial ','','2022-01-15','2022-01-15','53','PUXADORES P MOVEIS N. 14 ','',16.00,'PUXADORES ','A1','145.00','','0'),
+(62,'Inicial ','','2022-01-15','2022-01-15','54','PUXADORES P MOVEIS N. 112','',14.00,'PUXADORES ','A1','145.00','','0'),
+(63,'Inicial ','','2022-01-15','2022-01-15','55','PUXADORES P MOVEIS N. 123','',12.00,'PUXADORES ','A1','100.00','','0'),
+(64,'Inicial ','','2022-01-15','2022-01-15','56','PUXADORES P MOVEIS N. 103','',19.00,'PUXADORES ','A1','75.00','','0'),
+(65,'Inicial ','','2022-01-15','2022-01-15','57','PUXADORES P MOVEIS N. 104','',8.00,'PUXADORES ','A1','130.00','','0'),
+(66,'Inicial ','','2022-01-15','2022-01-15','58','PUXADORES P MOVEIS N. 44','',24.00,'PUXADORES','A1','120.00','','0'),
+(67,'Inicial ','','2022-01-15','2022-01-15','59','PUXADORES P MOVEIS N, 46','',20.00,'PUXADORES ','A1','145.00','','0'),
+(68,'Inicial ','','2022-01-15','2022-01-15','60 ','PUXADORES P MOVEIS N. 42','',25.00,'PUXADORES ','A1','100.00','','0'),
+(69,'Inicial ','','2022-01-15','2022-01-15','61','PUXADORES P MOVEIS N. 102','',11.00,'PUXADORES ','A1','125.00','','0'),
+(70,'Inicial ','','2022-01-15','2022-01-15','62','PUXADORES P MOVEIS N. 106','',10.00,'PUXADORES','A1','145.00','','0'),
+(71,'Inicial ','','2022-01-15','2022-01-15','63','PUXADORES P MOVEIS N. 107','',123.00,'PUXADORES ','A1','120.00','','0'),
+(73,'Inicial ','','2022-01-15','2022-01-15','64','PUXADORES P MOVEIS N. 97','',90.00,'PUXADORES ','A1','85.00','','0'),
+(74,'Inicial ','','2022-01-15','2022-01-15','65','PUXADORES P MOVEIS N. 92','',38.00,'PUXADORES ','A1','110.00','','0'),
+(75,'Inicial ','','2022-01-15','2022-01-15','66','PUXADORES P MOVEIS N. 55','',49.00,'PUXADORES ','A1','75.00','','0'),
+(76,'Inicial ','','2022-01-15','2022-01-15','67','INTERRUPTOR DUPLO ESTANQUE','',3.00,'INTERRUPTORES ','A1','395.00','','0'),
+(77,'Inicial ','','2022-01-15','2022-01-15','68','ESPELHO INOX RECTANGULAR ','',13.00,'ESPELHOS ','A1','75.00','','0'),
+(78,'Inicial ','','2022-01-15','2022-01-15','69','EXTENSAO 3 BOCAS ','',4.00,'EXTENSOES ','A1','695.00','','0'),
+(79,'Inicial ','','2022-01-15','2022-01-15','70','PUXADORES N. 60 ','',39.00,'PUXADORES ','A1','130.00','','0'),
+(80,'','','2022-01-15','2022-01-15','71','PUXADORES N. 32','',31.00,'PUXADORES ','A1','105.00','','0'),
+(81,'','','2022-01-15','2022-01-15','72','PUXADORES N. 66','',25.00,'PUXADORES ','A1','95.00','','0'),
+(82,'','','2022-01-15','2022-01-15','73','PUXADORES N. 70 ','',30.00,'PUXADORES ','A1','95.00','','0'),
+(83,'','','2022-01-15','2022-01-15','74','PUXADORES N. 24','',21.00,'PUXADORES ','A1','145.00','','0'),
+(84,'','','2022-01-15','2022-01-15','75','PUXADORES N. 29','',52.00,'PUXADORES ','A1','195.00','','0'),
+(85,'','','2022-01-15','2022-01-15','76','PUXADORES N. 5 ','',46.00,'PUXADORES ','A1','95.00','','0'),
+(86,'','','2022-01-15','2022-01-15','77','FECHADURA VITRINE ','',9.00,'FECHADURAS ','A1','295.00','','0'),
+(87,'','','2022-01-15','2022-01-15','78','FECHOS TIC TAC ','',10.00,'FECHOS ','A1','895.00','','0'),
+(88,'','','2022-01-15','2022-01-15','79','CREMONA','',10.00,'CREMONAS ','A1','1450.00','','0'),
+(89,'','','2022-01-15','2022-01-15','80','PUXADORES ALFA 805 INOX ','',4.00,'PUXADORES ','A1','245.00','','0'),
+(90,'','','2022-01-15','2022-01-15','81','PUXADORES ALFA 806 INOX ','',33.00,'PUXADORES ','A1','275.00','','0'),
+(91,'','','2022-01-15','2022-01-15','82','PUXADORES AD 35','',14.00,'PUXADORES ','A1','125.00','','0'),
+(92,'','','2022-01-15','2022-01-15','83','PUXADORES Y100','',8.00,'PUXADORES ','A1','145.00','','0'),
+(93,'','','2022-01-15','2022-01-15','84','PUXADORES WR24','',19.00,'PUXADORES ','A1','265.00','','0'),
+(94,'','','2022-01-15','2022-01-15','85','PUXADORES WRH CER-6-26','',9.00,'PUXADORES ','A1','160.00','','0'),
+(95,'','','2022-01-15','2022-01-15','86','PUXADORES ALFA 803 CROM ','',4.00,'PUXADORES ','A1','225.00','','0'),
+(96,'','','2022-01-15','2022-01-15','87','PUXADORES P MOVEIS CER7 2009','',44.00,'PUXADORES ','A1','245.00','','0'),
+(97,'','','2022-01-15','2022-01-15','88','PUXADORES ALFA 31','',8.00,'PUXADORES ','A1','245.00','','0'),
+(98,'','','2022-01-15','2022-01-15','89','PUXADORES ALFA 37','',10.00,'PUXADORES ','A1','245.00','','0'),
+(99,'','','2022-01-15','2022-01-15','90','PUXADORES ALFA JG','',6.00,'PUXADORES ','A1','220.00','','0'),
+(100,'','','2022-01-15','2022-01-15','91','PUXADORES AOC','',6.00,'PUXADORES ','A1','695.00','','0'),
+(101,'','','2022-01-15','2022-01-15','92','PUXADORES RODES LATAO ','',12.00,'PUXADORES ','A1','695.00','','0'),
+(102,'','','2022-01-15','2022-01-15','93','PUXADORES RODES 41 ALUMINIO ','',4.00,'PUXADORES ','A1','425.00','','0'),
+(103,'','','2022-01-15','2022-01-15','94','PUXADORES 40 ','',50.00,'PUXADORES ','A1','245.00','','0'),
+(104,'','','2022-01-15','2022-01-15','95','PUXADORES GNS 3050 ','',9.00,'PUXADORES ','A1','795.00','','0'),
+(105,'','','2022-01-15','2022-01-15','96','PUXADORES 520-00','',5.00,'PUXADORES ','A1','985.00','','0'),
+(106,'','','2022-01-15','2022-01-15','97','ESPELHO P FECHADURA P MOVEL ','',1564.00,'ESPELHOS ','A1','75.00','','0'),
+(107,'','','2022-01-15','2022-01-15','98','PUXADORES P MOVEL 39','',56.00,'PUXADORES ','A1','390.00','','0'),
+(108,'','','2022-01-15','2022-01-15','99','PUXADORES P MOVEL 38','',63.00,'PUXADORES ','A1','295.00','','0');
+
+/*Table structure for table `serial_key` */
+
+DROP TABLE IF EXISTS `serial_key`;
+
+CREATE TABLE `serial_key` (
+  `id` int(1) NOT NULL,
+  `serial_key` varchar(50) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `serial_key` */
+
+insert  into `serial_key`(`id`,`serial_key`,`date`) values 
+(1,'','2022-01-12');
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `ID_U` int(2) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(50) DEFAULT NULL,
+  `Contacto` varchar(15) DEFAULT NULL,
+  `Utilizador` varchar(30) DEFAULT NULL,
+  `Passe` varchar(30) DEFAULT NULL,
+  `Dica` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ID_U`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `user` */
+
+insert  into `user`(`ID_U`,`Nome`,`Contacto`,`Utilizador`,`Passe`,`Dica`) values 
+(1,NULL,NULL,'root','12345',NULL),
+(3,'Aisha','843131786','Aisha','Aisha123','O Basíco');
+
+/*Table structure for table `vendas` */
+
+DROP TABLE IF EXISTS `vendas`;
+
+CREATE TABLE `vendas` (
+  `ID_V` int(5) NOT NULL AUTO_INCREMENT,
+  `Cliente` varchar(50) DEFAULT NULL,
+  `Num_Venda` varchar(30) DEFAULT NULL,
+  `Data_Venda` datetime DEFAULT NULL,
+  `Artigo` varchar(15) DEFAULT NULL,
+  `Descricao` varchar(50) DEFAULT NULL,
+  `UN` varchar(5) DEFAULT NULL,
+  `qtd` int(5) DEFAULT NULL,
+  `Pr_UN` decimal(12,2) DEFAULT NULL,
+  `IVA` varchar(5) DEFAULT NULL,
+  `PR_Tl` decimal(12,2) DEFAULT NULL,
+  PRIMARY KEY (`ID_V`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `vendas` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

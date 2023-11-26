@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LiteGears.exe" version="1.0.0.0" publicKeyToken="18a526264abd6acc" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LiteGears" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="LiteGears.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiteGears.exe" size="79360">
+      <assemblyIdentity name="LiteGears" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/Vf3rB30fAdHeTy/j+s5MpaQLWf1h4mv0MkB/Y9KRC4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="LiteGears.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6N7MliNbVJSIAIPrecIshMbZ7zEoKLr5SQvud4LDUOw=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-RBSKUSI\THEPROGRAMMER" issuerKeyHash="949f6acede9e34003c557283a8e8620b084240b9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ueE+1NDOqTJq5Wrq2xGLhWAUhNlhYgtNJ9xcIxIrQwg=</DigestValue></Reference></SignedInfo><SignatureValue>dRs7mi64F3g7s5v6xzq7hfJF4Wz97lp+qiv7q+GuQ0Y86biHp49GkL3JnNcH2fZmPt7hxMGtGD0H1duelZZBchzi7TQBz5byy7OdVqVlwy1lZj1MYUeTM2mJJZBuDHBBb9qkehmSAO2RXTQrWoC5uXltm8Zd3jV2v3SrkETSlr4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>8K4V8uNaPEpxPwaiuG4EqqkkkjsPFq0O6gcfQ44ajQVC642KKzL+DZiprDHG//AI4qkCIcqmFhJfgBRE3dpPyHqxRmBOAbETLJRb+EWrmf8j9+TdcZg3xa8q3njRFIZ5SXCZF5FAPEdnyQOH7beEIY/SYhRXaEYdOTIJXOcP9/E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="08432b12235cdc274d0b6261d9841460858b11dbea6ae56a32a9ced0d43ee1b9" Description="" Url=""><as:assemblyIdentity name="LiteGears.exe" version="1.0.0.0" publicKeyToken="18a526264abd6acc" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-RBSKUSI\THEPROGRAMMER</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>b8GNNnwRWq1BnKkmbGsDpv7Z4PIbYx/olT8Po4X7JpY=</DigestValue></Reference></SignedInfo><SignatureValue>ImqRnTUslBAthh7/2osBcVDJx+anKMjBrRsHFXkDOW9tJ/Pptuz8XlZ6oWNTTjW2OVmH2qiGtb45JexMu1r020K8HDgk98UHaQ24CR+BHH7421wj6oMVby2PaMFH85C1oJ5CT83YTI9G9ccfU2JYYpuTr6HsvQ38TsrY5q6NNoA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>8K4V8uNaPEpxPwaiuG4EqqkkkjsPFq0O6gcfQ44ajQVC642KKzL+DZiprDHG//AI4qkCIcqmFhJfgBRE3dpPyHqxRmBOAbETLJRb+EWrmf8j9+TdcZg3xa8q3njRFIZ5SXCZF5FAPEdnyQOH7beEIY/SYhRXaEYdOTIJXOcP9/E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICDTCCAXagAwIBAgIQHMuzvxDn25ZNaJTrOOQXTDANBgkqhkiG9w0BAQsFADBFMUMwQQYDVQQDHjoARABFAFMASwBUAE8AUAAtAFIAQgBTAEsAVQBTAEkAXABUAEgARQBQAFIATwBHAFIAQQBNAE0ARQBSMB4XDTIyMDExMjA1MjQxNFoXDTIzMDExMjExMjQxNFowRTFDMEEGA1UEAx46AEQARQBTAEsAVABPAFAALQBSAEIAUwBLAFUAUwBJAFwAVABIAEUAUABSAE8ARwBSAEEATQBNAEUAUjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA8K4V8uNaPEpxPwaiuG4EqqkkkjsPFq0O6gcfQ44ajQVC642KKzL+DZiprDHG//AI4qkCIcqmFhJfgBRE3dpPyHqxRmBOAbETLJRb+EWrmf8j9+TdcZg3xa8q3njRFIZ5SXCZF5FAPEdnyQOH7beEIY/SYhRXaEYdOTIJXOcP9/ECAwEAATANBgkqhkiG9w0BAQsFAAOBgQC/5p/ts135sGkYXDqlcIHDCZBbv7X0wEceUJilGh7I9YSeAkUi1ogQoBiBEWOUL7cAW3hwdn3qqwtdstkDAJmlr8Spi4TnbQg7a6V5n5t+D3/Rr+3aQvBrfuwtMZL6v/9cgrEUUo3fke3JMyJY2/yEShlyDnqY9JnMj+pi7AJtZg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
